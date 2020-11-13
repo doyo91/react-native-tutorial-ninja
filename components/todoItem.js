@@ -6,7 +6,12 @@ export const TodoItem = ({ item, pressHandler }) => {
   return (
     <View style={styles.todoContainer}>
       <TouchableOpacity onPress={() => pressHandler(item.key)}>
-        <MaterialIcons style={styles.delete} name="delete" />
+        <MaterialIcons
+          name="delete"
+          size={18}
+          color="coral"
+          style={styles.icon}
+        />
       </TouchableOpacity>
       <Text style={styles.text}>{item.text}</Text>
     </View>
@@ -26,12 +31,10 @@ const styles = StyleSheet.create({
     borderStyle: "dashed",
     borderRadius: 10,
   },
+  icon: {
+    paddingHorizontal: 10,
+  },
   text: {
     paddingRight: 10,
-  },
-  delete: {
-    padding: 10,
-    color: "coral",
-    fontSize: 22,
   },
 });
